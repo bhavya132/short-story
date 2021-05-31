@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "engines": {
+    "node": "15.x",
+    "npm": "7.x"
+  },
   "scripts": {
     "start": "cross-env NODE_ENV=production node app",
     "dev": "cross-env NODE_ENV=development nodemon app"
@@ -12,6 +16,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "connect-mongo": "^3.2.0",
+    "debug": "^2.6.9",
     "dotenv": "^8.2.0",
     "epilogue": "^0.7.1",
     "express": "^4.17.1",
