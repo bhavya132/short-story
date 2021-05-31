@@ -27,7 +27,7 @@ const app = express()
 app.use(express.urlencoded({extended:false}))
 app.use(express.json())
 
-const PORT=process.env.PORT||3000;
+
 
 //morgan logging
 if(process.env.NODE_ENV=='development'){
@@ -75,10 +75,9 @@ app.use('/',require('./routes/index'))
 app.use('/auth',require('./routes/auth'))
 app.use('/stories',require('./routes/stories'))
 
-const startServer = async () => { 
-  // await initializeDatabase(app)
-  await promisify(app.listen).bind(app)(PORT)
-  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
-}
 
-startServer()
+
+
+app.listen(process.env.PORT||3000,(req,res)=>{
+  console.log("Server started")
+})
