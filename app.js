@@ -26,7 +26,8 @@ const app = express()
 //body-parser
 app.use(express.urlencoded({extended:false}))
 app.use(express.json())
-const PORT=process.env.PORT||8080;
+
+const PORT=process.env.PORT||3000;
 
 //morgan logging
 if(process.env.NODE_ENV=='development'){
