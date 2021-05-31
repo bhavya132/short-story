@@ -5,10 +5,10 @@ const User=require('../modals/User')
 module.exports=function(passport){
     
 passport.use(new GoogleStrategy({
-    clientID: "816863996365-fotipjbavc6sgqto8cj1koa8r1noj71o.apps.googleusercontent.com",
-    clientSecret: "UMvuFAk7eW5b10q0AnRpTfdn",
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     callbackURL: "/auth/google/callback",
-    proxy: true 
+    proxy:true
   },
   async function(accessToken, refreshToken, profile, done) {
     // console.log(profile)
